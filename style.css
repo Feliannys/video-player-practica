@@ -1,0 +1,77 @@
+@import './buttons.css';
+
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+
+body{
+    background-color: rgb(255, 142, 122);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.wrapper {
+    max-inline-size: 900px;
+    margin: auto;
+}
+
+.player {
+    margin-block-start: 100px;
+    position: relative;
+}
+
+.player video {
+    inline-size: 100%;
+    aspect-ratio: 16/9;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+.player-tittle{
+    color: white;
+    position: absolute;
+    inset-block-start: 0px;
+    inset-inline-start: 20px;
+}
+
+
+.player-actions {
+    position: absolute;
+    inset-block-start: 50px;
+    inset: 0; 
+    /* Es lo mismo que colocar
+    inset-block-end: 0;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    inset-inline-start: 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* z-index: 2;  Se coloca porque los demas elementos estan encima del video. La otra opcion es subir el video en HTML que es lo que hare */
+}
+
+.player-progress {
+    /* background: yellow; */
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline: 0;
+    display: flex;
+    padding: 10px;
+}
+
+.player-progress input{
+    flex: 1;
+}
+
+.player-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: .3s opacity;
+}
+
+.player:hover .player-overlay {
+    opacity: 1;
+}
